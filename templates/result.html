@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+</head>
+<body>
+  <div class="result-container">
+    <h2>💧 Crop Water Requirement Result</h2>
+
+    <!-- 🔹 Input Summary Table -->
+    <table class="input-table">
+      <caption>🌱 Input Parameters</caption>
+      <tr><th>Crop</th><td>{{ crop }}</td></tr>
+      <tr><th>Temperature (°C)</th><td>{{ temperature }}</td></tr>
+      <tr><th>Humidity (%)</th><td>{{ humidity }}</td></tr>
+      <tr><th>Rainfall (mm)</th><td>{{ rainfall }}</td></tr>
+      <tr><th>Wind Speed (km/h)</th><td>{{ wind_speed }}</td></tr>
+      <tr><th>Solar Radiation (W/m²)</th><td>{{ solar_rad }}</td></tr>
+      <tr><th>Precipitation (mm)</th><td>{{ precipitation }}</td></tr>
+    </table>
+
+    <!-- 🔸 Output Results Table -->
+    <table class="output-table">
+      <caption>📊 Prediction Results</caption>
+      <tr><th>Crop Coefficient (Kc)</th><td>{{ kc }}</td></tr>
+      <tr><th>Evapotranspiration (ET)</th><td>{{ ET }}</td></tr>
+      <tr><th>💧 Water Requirement</th><td><strong>{{ prediction }} L/day per hectare</strong></td></tr>
+      <tr><th>📅 Irrigation Interval</th><td>{{ interval }}</td></tr>
+      <tr><th>💡 Irrigation Method</th><td>{{ method }}</td></tr>
+    </table>
+
+    <div class="back-button">
+      <a href="/">⬅ Back to Input</a>
+    </div>
+  </div>
+</body>
+</html>
